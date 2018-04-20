@@ -6,5 +6,5 @@ setup (
     version          = "0.1",
     description      = "Example application to be deployed.",
     packages         = find_packages(),
-    install_requires = ["numpy","pymisp","requests","pandas"],
+    install_requires = ["numpy","pymisp","requests","pandas","cython"],
 )
