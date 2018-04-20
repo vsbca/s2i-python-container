@@ -2,7 +2,7 @@
 # applications.
 FROM centos/s2i-base-centos7
 
-EXPOSE 8080
+#EXPOSE 8080
 
 ENV PYTHON_VERSION=3.5 \
     PATH=$HOME/.local/bin/:$PATH \
@@ -30,7 +30,7 @@ LABEL summary="$SUMMARY" \
       com.redhat.component="python35-docker" \
       name="centos/python-35-centos7" \
       version="3.5" \
-      usage="s2i build https://github.com/sclorg/s2i-python-container.git --context-dir=3.5/test/setup-test-app/ centos/python-35-centos7 python-sample-app" \
+      usage="s2i build https://github.com/vsbca//s2i-python-container.git --context-dir=3.5/test/setup-test-app/ centos/python-35-centos7 python-sample-app" \
       maintainer="SoftwareCollections.org <sclorg@redhat.com>"
 
 RUN INSTALL_PKGS="rh-python35 rh-python35-python-devel rh-python35-python-setuptools rh-python35-python-pip nss_wrapper \
