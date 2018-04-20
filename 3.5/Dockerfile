@@ -39,6 +39,9 @@ RUN INSTALL_PKGS="rh-python35 rh-python35-python-devel rh-python35-python-setupt
     yum install -y centos-release-scl && \
     yum -y --setopt=tsflags=nodocs install --enablerepo=centosplus $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
+    pip3 install pandas && \
+    pip3 install pymisp && \
+    pip3 install requests &&\
     # Remove centos-logos (httpd dependency) to keep image size smaller.
     rpm -e --nodeps centos-logos && \
     yum -y clean all --enablerepo='*'
@@ -64,4 +67,4 @@ RUN source scl_source enable rh-python35 && \
 USER 1001
 
 # Set the default CMD to print the usage of the language image.
-CMD $STI_SCRIPTS_PATH/usage
+CMD ["python3", "/ctx2/misp_trend.py"]
